@@ -1396,12 +1396,12 @@
                         <div class="collapse-content">
                             <div class="collapse-content-inner">
                                 <ul>
-                                    <li>Store Robbery - Police (4-5) | Crimenals (1-3)</li>
+                                    <li>Store Robbery - Police (4-5) | Crimenals (1-4)</li>
                                     <li>ATM Robbery - Police (3-5) | Crimenals (1-3)</li>
                                     <li>House Robbery - Police (4-6) | Crimenals (1-4)</li>
-                                    <li>Police Staff house - Police (5-7) | Crimenals (2-5)</li>
-                                    <li>DigitalDen Robbery - Police (5-7) | Crimenals (2-2)</li>
-                                    <li>Laundromat Robbery - Police (5-7) | Crimenals (2-5)</li>
+                                    <li>Police Staff house - Police (5-7) | Crimenals (2-6)</li>
+                                    <li>DigitalDen Robbery - Police (5-7) | Crimenals (2-4)</li>
+                                    <li>Laundromat Robbery - Police (5-7) | Crimenals (3-6)</li>
                                     <li>Cash Exchange Robbery - Police (5-8) | Crimenals (3-6)</li>
                                     <li>Maze Bank - Police (10-12) | Crimenals (5-10)</li>
                                 </ul>
@@ -1580,7 +1580,7 @@
 
                 <div class="form-group">
                     <label for="character-name">Name :</label>
-                    <input type="text" id="character-name" placeholder="اكتب اسمك"required>
+                    <input type="text" id="character-name" placeholder="Your Name"required>
                 </div>
                 <style>
                     input::-webkit-outer-spin-button,
@@ -1596,7 +1596,7 @@
 
             <div class="form-group">
     <label for="character-Age">Age :</label>
-    <input type="number" id="character-Age" required min="16" placeholder="اكتب عمرك">
+    <input type="number" id="character-Age" required min="16" placeholder="Your Age">
 </div>
 
                 <script>
@@ -1620,17 +1620,17 @@
 
                 <div class="form-group">
                     <label for="character-id">Steam :</label>
-                    <input type="text" id="character-id" required>
+                    <input type="text" id="character-id"placeholder="obhvvv" required>
                 </div>
 <div class="form-group">
-    <label for="phone-number">Your Available Time :</label>
-    <input type="text" id="phone-number"required min="1" required placeholder="1h - 5h">
+    <label for="Time-Available">Your Available Time :</label>
+    <input type="text" id="Time-Available"required min="1" required placeholder="1h - 5h">
 </div>
 
 
                 <div class="form-group">
                     <label for="discord-user">Copy id Discord:</label>
-                    <input type="text" id="discord-user" required >
+                    <input type="text" id="discord-user"required min="18" placeholder="1320020616606388345" required >
                 </div>
 
                 <div class="modal-footer">
@@ -1797,7 +1797,7 @@
             const characterName = document.getElementById('character-name').value;
             const characterAge = document.getElementById('character-Age').value;
             const characterId = document.getElementById('character-id').value;
-            const phoneNumber = document.getElementById('phone-number').value;
+            const TimeAvailable = document.getElementById('Time-Available').value;
             const discordUser = document.getElementById('discord-user').value;
 
             const webhookUrl = jobConfig[jobType].webhook;
@@ -1808,7 +1808,7 @@
                 embeds: [
                     {
                         color: 0xFC7E3F,
-                        description: `**New Apply ${jobTitle}**\n\n**Name :** ${characterName}\n**Age :** ${characterAge}\n**Steam :** ${characterId}\n**Your Available Time :** ${phoneNumber}\n**Copy Id :** <@${discordUser}>`,
+                        description: `**New Apply ${jobTitle}**\n\n**Name :** ${characterName}\n**Age :** ${characterAge}\n**Steam :** ${characterId}\n**Your Available Time :** ${TimeAvailable}\n**Copy Id :** <@${discordUser}>`,
                         thumbnail: {
                             url: "https://i.postimg.cc/HxkhLWCm/NT1.webp"
                         },
