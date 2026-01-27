@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="ar" dir="rtl">
     
     <body oncontextmenu="return false" onselectstart="return false">
-    <head>
+    <head>  
         <meta charset="UTF-8">
         <meta name="author" content="1iuae">
         <title>Nightmare Town</title>
@@ -75,6 +75,102 @@
             margin: 0 auto;
             padding: 2rem;
         }
+
+.tutorial-video { 
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+}
+/* ===== نظام الصفحات ===== */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== Store Page ===== */
+#Store {
+    padding: 40px 0;
+}
+
+#Store .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ===== Grid ===== */
+.Store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ===== Store Card ===== */
+.Store-card {
+    position: relative;
+    background: #111;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.Store-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ===== Video ===== */
+.Store-video {
+    width: 100%;
+    height: 220px;
+    border: none;
+}
+
+/* ===== Overlay Image ===== */
+.Store-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.Store-overlay img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* ===== Store Info ===== */
+.Store-info {
+    padding: 16px;
+    color: #fff;
+    text-align: right;
+    direction: rtl;
+}
+
+.Store-info h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.Store-info p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .Store-video,
+    .Store-overlay img {
+        height: 180px;
+    }
+}
+
 
         /* Navbar Styles */
         .navbar {
@@ -173,7 +269,7 @@
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(10, 10, 10, 0.9));
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(10, 10, 10, 0.9));     
             border-radius: var(--border-radius);
             margin-bottom: 3rem;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -816,7 +912,7 @@
     <!-- Navbar -->
     <div class="container">
         <nav class="navbar">
-            <div class="logo">
+            <div class="logo">  
                 <a href="#" onclick="showPage('home')">
                     <img src="https://i.postimg.cc/HxkhLWCm/NT1.webp" alt="ServerNames">
                 </a>
@@ -827,15 +923,17 @@
                 <a href="#" onclick="showPage('rules')">Rules</a>
                 <a href="#" onclick="showPage('tutorials')">Explanations</a>
                 <a href="#" onclick="showPage('jobs')">Apply Jobs</a>
-                <a href="https://discord.gg/b9eEBNEa3k" target="_blank">Store</a>
+                <a href="#" onclick="showPage('Store')">Store</a>
+                <!-- <a href="https://discord.gg/b9eEBNEa3k" target="_blank">Store</a> -->
             </div>
 
             <div class="social-links">
                 <a href="https://discord.gg/b9eEBNEa3k" target="_blank" style="text-decoration: none;">Join Discord<i
                         style="padding-right: 10px;" class="fab fa-discord"></i></a>
             </div>
+            
         </nav>
-    </div>
+    </div>  
 
     <!-- Home Page -->
     <div id="home" class="page active">
@@ -961,17 +1059,17 @@
                         </div>
                     </div>
 
-                    <div class="collapse-container">
-                        <button class="collapse-btn">الباور قيمنق - PowerGaming</button>
-                        <div class="collapse-content">
-                            <div class="collapse-content-inner">
-                                <ul>
-                                    <li>يمنع استخدام الوسائل غير موجودة في اللعبة للحصول على ميزة أو عدم التوافق مع
-                                        العالم بطريقة معقولة وبشكل واقعي</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                            <!-- <div class="collapse-container">
+                                <button class="collapse-btn">الباور قيمنق - PowerGaming</button>
+                                <div class="collapse-content">
+                                    <div class="collapse-content-inner">
+                                        <ul>
+                                            <li>يمنع استخدام الوسائل غير موجودة في اللعبة للحصول على ميزة أو عدم التوافق مع
+                                                العالم بطريقة معقولة وبشكل واقعي</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
 
                     <div class="collapse-container">
                         <button class="collapse-btn">تقدير الحياة - NWL</button>
@@ -1427,13 +1525,225 @@
 
                 <!--________________-->
 
-                 <!-- <div class="tutorial-card">
+                        <!-- <div class="tutorial-card">
+                            <iframe class="tutorial-video" width="560" height="315" src="https://www.youtube.com/watch?v=pXava1lGms4&list=RDpXava1lGms4&start_radio=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div class="tutorial-info">
+                                <h3>شرح </h3>
+                                <p>سيتم اضافته قريباً</p>
+                            </div>
+                        </div>
+                     -->
+                        <div class="tutorial-card"
+     onclick="window.open('https://www.youtube.com/watch?v=bH9UBrvRHHk&list=RDbH9UBrvRHHk&start_radio=1', '_blank')"
+     style="cursor:pointer;">
+
+    <img class="tutorial-video"
+         src="https://img.youtube.com/vi/pXava1lGms4/hqdefault.jpg"
+         width="560"
+         height="315"
+         alt="Video Thumbnail">
+
+    <div class="tutorial-info">
+        <h3>شرح </h3>
+        <p>سيتم اضافته قريباً</p>
+    </div>
+</div>
+
+
+                <!--________________-->
+
+                <!-- <div class="tutorial-card">
                     <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="tutorial-info">
-                        <h3>شرح نظام التفعيل</h3>
+                        <h3>شرح تقديم الصحة</h3>
                         <p>سيتم اضافته قريباً</p>
                     </div>
                 </div> -->
+
+                <!--________________-->
+
+                <!-- <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="tutorial-info">
+                        <h3>شرح نظام الميكانيك</h3>
+                        <p>سيتم اضافته قريباً</p>
+                    </div>
+                </div> -->
+
+                <!--________________-->
+                <!-- 
+                <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="tutorial-info">
+                        <h3>شرح نظام العصابات</h3>
+                        <p>سيتم اضافته قريباً</p>
+                    </div>
+                </div> -->
+
+                <!--________________-->
+
+                <!-- <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="tutorial-info">
+                        <h3>شرح نظام المشاريع</h3>
+                        <p>سيتم اضافته قريباً</p>
+                    </div>
+                </div> -->
+
+                <!--________________-->
+                <!-- 
+                <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="tutorial-info">
+                        <h3>شرح وظيفة Taxi</h3>
+                        <p>سيتم اضافته قريباً</p>
+                    </div>
+                </div> -->
+
+                <!--________________-->
+                <!-- 
+                <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="tutorial-info">
+                        <h3>شرح وظيفة الصيد</h3>
+                        <p>سيتم اضافته قريباً</p>
+                    </div>
+                </div> -->
+
+                <!--________________-->
+                <!-- 
+                <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="tutorial-info">
+                        <h3>شرح وظيفة Recycl</h3>
+                        <p>سيتم اضافته قريباً</p>
+                    </div>
+                </div> -->
+
+                <!--________________-->
+                <!-- 
+                <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="tutorial-info">
+                        <h3>شرح Pawnshop</h3>
+                        <p>سيتم اضافته قريباً</p>
+                    </div>
+                </div> -->
+
+                <!--________________-->
+
+                <!--
+                    <div class="tutorial-card">
+                    <iframe class="tutorial-video" width="560" height="315" src="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=400&height=225" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="tutorial-info">
+                            <h3>شرح</h3>
+                            <p>سيتم اضافته قريباً</p>
+                        </div>
+                    </div>
+                -->
+                <!--________________-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Jobs Page -->
+    <div id="jobs" class="page">
+        <div class="container">
+            <h1><i class="fa-solid fa-paper-plane"></i> تقديم الوظائف</h1>
+            <p>اختر الوظيفة التي ترغب في التقديم عليها</p>
+
+            <div class="jobs-container">
+                <div class="job-card" id="police-job">
+                    <h3><i class="fas fa-shield-alt"></i> تقديم LSPD</h3>
+                    <p>انضم إلى العسكريه  وكن جزءًا من حفظ الأمن</p>
+                    <button class="btn" onclick="openJobModal('police')">تقديم الآن</button>
+                </div>
+
+                <div class="job-card" id="ems-job">
+                    <h3><i class="fas fa-ambulance"></i> تقديم EMS</h3>
+                    <p>انضم إلى فريق الإسعاف وأنقذ الأرواح</p>
+                    <button class="btn" onclick="openJobModal('ems')">تقديم الآن</button>
+                </div>
+
+                <div class="job-card" id="staff-job">
+                    <h3><i class="fas fa-gavel"></i> تقديم الادارة</h3>
+                    <p>انضم إلى الادارة  ادارة السيرفر</p>
+                    <button class="btn" onclick="openJobModal('staff')">تقديم الآن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Store Page -->
+<div id="Store" class="page">
+    <div class="container">
+        <h1><i class="fa-solid fa-store"></i></h1>
+        <p>المتجر</p>
+
+        <div class="Store-grid">
+
+            <div class="Store-card">
+                <a href="https://discord.gg/ntrp" target="_blank" class="Store-overlay">
+                    <img
+                        src="https://raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png"
+                        alt="Store Image"
+                    />
+                </a>
+
+                <iframe
+                    class="Store-video"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+
+                <div class="Store-info">
+                    <h3>رقم جوال مميز</h3>
+                    <p>999 – 971 – 501</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div id="Store" class="page">
+    <div class="container">
+        <h1><i class="fa-solid fa-store"></i></h1>
+        <p>المتجر</p>
+
+        <div class="Store-grid">
+
+            <div class="Store-card">
+                <a href="https://discord.gg/ntrp" target="_blank" class="Store-overlay">
+                    <img
+                        src="https://raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png"
+                        alt="Store Image"
+                    />
+                </a>
+
+                <iframe
+                    class="Store-video"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+
+                <div class="Store-info">
+                    <h3>رقم جوال مميز</h3>
+                    <p>999 – 971 – 501</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+<!-- 
+                 <div class="Store-card">
+                    <iframe class="Store-video" width="560" height="315" photo ="https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=1520&height=855" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="Store-info"> -->
+
                  
                 <!--________________-->
 
@@ -1541,34 +1851,6 @@
         </div>
     </div>
 
-    <!-- Jobs Page -->
-    <div id="jobs" class="page">
-        <div class="container">
-            <h1><i class="fa-solid fa-paper-plane"></i> تقديم الوظائف</h1>
-            <p>اختر الوظيفة التي ترغب في التقديم عليها</p>
-
-            <div class="jobs-container">
-                <div class="job-card" id="police-job">
-                    <h3><i class="fas fa-shield-alt"></i> تقديم LSPD</h3>
-                    <p>انضم إلى قوات الشرطة وكن جزءًا من حفظ الأمن</p>
-                    <button class="btn" onclick="openJobModal('police')">تقديم الآن</button>
-                </div>
-
-                <div class="job-card" id="ems-job">
-                    <h3><i class="fas fa-ambulance"></i> تقديم EMS</h3>
-                    <p>انضم إلى فريق الإسعاف وأنقذ الأرواح</p>
-                    <button class="btn" onclick="openJobModal('ems')">تقديم الآن</button>
-                </div>
-
-                <div class="job-card" id="staff-job">
-                    <h3><i class="fas fa-gavel"></i> تقديم الادارة</h3>
-                    <p>انضم إلى الادارة لمعاونة الاداريين</p>
-                    <button class="btn" onclick="openJobModal('staff')">تقديم الآن</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Job Application Modal -->
     <div class="modal" id="job-modal">
         <div class="modal-content">
@@ -1578,7 +1860,7 @@
             </div>
 
             <form id="job-form">
-                <input type="hidden" id="job-type">
+                <input type="hidden" id="job-type">     
 
                 <div class="form-group">
                     <label for="character-name">Name :</label>
@@ -1607,10 +1889,10 @@
                     ageInput.addEventListener('input', () => {
                         if (ageInput.validity.rangeUnderflow) {
                             ageInput.setCustomValidity('لازم يكون عمرك أكثر عن 16');
-                            ageInput.style.borderColor = 'red'; // 🔴 يخلي الإطار أحمر لو أقل من 16
+                            ageInput.style.borderColor = 'red'; 
                         } else {
                             ageInput.setCustomValidity('');
-                            ageInput.style.borderColor = 'green'; // 🟢 يخليه أخضر لو الرقم 16 أو أكثر
+                            ageInput.style.borderColor = 'green'; 
                         }
                     });
                 </script>
@@ -1624,6 +1906,13 @@
                     <label for="character-id">Steam :</label>
                     <input type="text" id="character-id"placeholder="obhvvv" required>
                 </div>
+                                <div class="form-group">
+                    <label for="Experiences">Experiences :</label>
+                    <input type="text" id="Experiences"placeholder="خبراتك" required>
+                </div>
+
+
+
 <div class="form-group">
     <label for="Time-Available">Your Available Time :</label>
     <input type="text" id="Time-Available"required min="1" required placeholder="1h - 5h">
@@ -1655,7 +1944,7 @@
             <div class="social-icons">
                 <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.tiktok.com/@_3vrr" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://discord.gg/b9eEBNEa3k" target="_blank"><i class="fab fa-discord"></i></a>
             </div>
@@ -1800,6 +2089,7 @@
             const characterAge = document.getElementById('character-Age').value;
             const characterId = document.getElementById('character-id').value;
             const TimeAvailable = document.getElementById('Time-Available').value;
+            const Experiences = document.getElementById('Experiences').value;
             const discordUser = document.getElementById('discord-user').value;
 
             const webhookUrl = jobConfig[jobType].webhook;
@@ -1815,7 +2105,7 @@
                             url: "https://i.postimg.cc/HxkhLWCm/NT1.webp"
                         },
                         image: {
-                            url: "https://i.postimg.cc/KYp8jzgP/NT2-2.png"
+                            url: "https://images-ext-1.discordapp.net/external/_Ee67SLYZrfiHzjU0MA2OXT64LiIUD5T8TDoRw21iaY/https/raw.githubusercontent.com/nawafzxz/image/refs/heads/main/NT2.2.png?format=webp&quality=lossless&width=1520&height=855"
                         }
                     }
                 ]
